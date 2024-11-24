@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Dropdown Text</title>
+  </head>
+  <body class="d-flex">
+    <main>
+      <section class="card">
+        <div>
+          <label for="option">Tipo:</label>
+          <select name="option" id="option" onchange="mostrarTexto()">
+            <option value="email">Correos</option>
+            <option value="fenix">Fenix ATC</option>
+            <option value="office">Office 365</option>
+            <option value="oracle">Fenix Oracle</option>
+          </select>
+        </div>
+        <textarea name="txtarea" id="txtarea" rows="4" cols="60" readonly></textarea
+        ><br>
+        <button onclick="copiarTexto()">Copiar</button>
+        <p id="mensaje" class="mensaje">Texto copiado</p>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
