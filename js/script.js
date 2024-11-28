@@ -3,21 +3,29 @@ function mostrarTexto(){
     const txtarea = document.getElementById("txtarea");
 
     switch(option.value) {
-        case "email":
-            txtarea.textContent = 
-            "cristhian.castrillon@comware.com.co\npablo.montalvo@comware.com.co\nariel.ochoa@comware.com.co\njuan.pelaez@comware.com.co\ncarlos.urrego@comware.com.co\njohne.correa@comware.com.co\ndeivyds.martinez@comware.com.co\ndaniel.gil@comware.com.co\neliana.ceballos@comware.com.co\nmaria.cortes@comware.com.co\nrenzo.linares@comware.com.co\nerich.sanchez@comware.com.co";
+        case "citrix":
+            txtarea.textContent = "Se realiza instalación de Citrix\nSe ingresa el servidor de Citrix para iniciar sesión\nSe valida correcto ingreso y despliegue de aplicaciones Citrix";
+            break;
+        case "commvault":
+            txtarea.textContent = "Se actualiza versión de Commvault\nSe ingresa al aplicativo con los datos del usuario\nSe valida correcto funcionamiento del aplicativo (servidor Medellín, Bogotá)";
+            break;
+        case "entrega":
+            txtarea.textContent = "Se realiza instalación y configuración del equipo.\nSe instala equipo en el puesto asignado.\nEl usuario ingresa al equipo con sus credenciales\nSe garantiza el correcto uso del equipo y aplicaciones\nSe realiza acta de entrega de equipo.";
             break;
         case "fenix":
-            txtarea.textContent = "Se realiza el cambio de servidor para Fenix ATC.\nSe ingresa al aplicativo con los datos del usuario.\nSe valida correcto despliegue y funcionamiento del aplicativo.";
-            break;
-        case "office":
-            txtarea.textContent = "Se realiza activación de Office.\nSe valida correcto funcionamiento.";
+            txtarea.textContent = "Se realiza instalación de Fenix ATC\nEl usuario inicia sesión con sus credenciales\nSe valida el correcto despliegue del aplicativo";
             break;
         case "oracle":
-            txtarea.textContent = "Fenix Oracle para analistas";
+            txtarea.textContent = "Se realiza instalación de Fenix Oracle\nSe copia y pega las carpetas y archivos en GTC Fenix\nEl usuario ingresa al aplicativo con sus credenciales\nSe valida correcto despliegue del aplicativo";
+            break;
+        case "office":
+            txtarea.textContent = "Se realiza activación de Office 365\nSe valida correcto uso del paquete Office";
+            break;
+        case "mantenimiento":
+            txtarea.textContent = "Se actualizan los controladores del sistema\nSe eliminan perfiles de usuarios antiguos\nSe desinstalan programas obsoletos\nSe reparan daños en memoria RAM\nSe reparan daños en el disco duro\nSe reinicia el equipo para guardar los cambios";
             break;
         default:
-            txtarea.textContent = "Predeterminado";
+            txtarea.textContent = "";
     }
 }
 
@@ -36,6 +44,7 @@ function copiarTexto() {
     // Muestra un mensaje de éxito
     const mensaje = document.getElementById("mensaje");
 	mensaje.style.display = "block";
+    // mensaje.innerHTML = "Texto copiado🥳";
 
     // Oculta el mensaje después de 2 segundos
     setTimeout(() => {
