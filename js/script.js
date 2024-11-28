@@ -1,8 +1,29 @@
-function mostrarTexto(){
-    const option = document.getElementById("option");
-    const txtarea = document.getElementById("txtarea");
+const options = document.getElementById("options");
+const txtarea = document.getElementById('txtarea');
+const copy = document.getElementById('copy');
 
-    switch(option.value) {
+
+// Función copiar area de texto
+copy.addEventListener('click', () => {
+    navigator.clipboard.writeText(txtarea.value).then(()=>{
+        // Cambiar el texto del botón temporalmente
+      const originalText = copy.textContent;
+      copy.textContent = "¡Copiado!";
+      
+      // Restaurar el texto después de 2 segundos
+      setTimeout(() => {
+        copy.textContent = originalText;
+      }, 1000);
+    })
+    .catch(err => {
+        console.error('Error al copiar el texto:', err);
+      });
+});
+
+
+// Funcion switch
+options.addEventListener("change", () => {
+    switch(options.value) {
         case "citrix":
             txtarea.textContent = "Se realiza instalación de Citrix\nSe ingresa el servidor de Citrix para iniciar sesión\nSe valida correcto ingreso y despliegue de aplicaciones Citrix";
             break;
@@ -27,27 +48,5 @@ function mostrarTexto(){
         default:
             txtarea.textContent = "";
     }
-}
+});
 
-// Copiar texto
-function copiarTexto() {
-    // Selecciona el área de texto
-    const txtarea = document.getElementById("txtarea");
-
-    // Selecciona el texto dentro del área de texto
-    txtarea.select();
-    txtarea.setSelectionRange(0, 99999); // Para dispositivos móviles
-
-    // Copia el texto al portapapeles
-    document.execCommand("copy");
-
-    // Muestra un mensaje de éxito
-    const mensaje = document.getElementById("mensaje");
-	mensaje.style.display = "block";
-    // mensaje.innerHTML = "Texto copiado🥳";
-
-    // Oculta el mensaje después de 2 segundos
-    setTimeout(() => {
-		mensaje.style.display = "none";
-	}, 2000);
-}
