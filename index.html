@@ -11,8 +11,9 @@
     <main>
       <section class="card">
         <div>
-          <label for="option">Seleccionar:</label>
-          <select name="option" id="option" onchange="mostrarTexto()">
+          <!-- <label for="options">Elige una opción:</label> -->
+          <select name="options" id="options">
+            <option value="" disabled selected>Selecciona</option>
             <option value="citrix">Citrix</option>
             <option value="commvault">Commvault</option>
             <option value="entrega">Entrega equipo</option>
@@ -24,8 +25,7 @@
         </div>
         <textarea name="txtarea" id="txtarea" rows="4" cols="60" readonly></textarea
         ><br>
-        <button onclick="copiarTexto()">Copiar</button>
-        <p id="mensaje" class="mensaje">Texto copiado</p>
+        <button id="copy">Copiar</button>
       </section>
     </main>
 
