@@ -28,11 +28,7 @@ options.addEventListener("change", () => {
       comment.textContent = `Buenxs xxx, xxx.
 
 De acuerdo a la información del caso, se detalla lo siguiente:
-
 - 
-- 
-- 
-
 Quedamos atentos a cualquier novedad.
 
 Saludos.`;
